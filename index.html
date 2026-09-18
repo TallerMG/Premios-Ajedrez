@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de premios del torneo de ajedrez Jugadas que unen.">
+  <title>Premios | Jugadas que unen</title>
+  <style>
+    :root{--black:#111;--green:#16834f;--cream:#fff;--gray:#f2f2f2;--ink:#161616;--red:#b42318;--line:#cfcfcf}
+    *{box-sizing:border-box}
+    body{margin:0;background-color:var(--cream);background-image:linear-gradient(45deg,#f6f6f6 25%,transparent 25%),linear-gradient(-45deg,#f6f6f6 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f6f6f6 75%),linear-gradient(-45deg,transparent 75%,#f6f6f6 75%);background-size:52px 52px;background-position:0 0,0 26px,26px -26px,-26px 0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+    button,input,textarea{font:inherit}
+    header{position:relative;overflow:hidden;background:#fff;color:var(--black);padding:28px 20px 0;text-align:center;border-bottom:8px solid var(--black)}
+    .eyebrow{display:inline-block;margin:0 0 8px;padding:6px 14px;border-radius:999px;background:var(--black);color:#fff;font-weight:800;letter-spacing:.05em}
+    h1{position:relative;margin:0;font-size:clamp(2rem,6vw,4rem);line-height:1.05}
+    header p{position:relative;max-width:680px;margin:13px auto 0;font-size:1.08rem}
+    .hero-art{display:block;width:min(900px,100%);max-height:360px;object-fit:cover;object-position:center 55%;margin:18px auto 0;border-radius:24px 24px 0 0}
+    main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:28px 0 50px}
+    .intro{display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:24px;padding:18px 20px;border:3px solid var(--black);border-radius:18px;background:#fff;box-shadow:7px 7px 0 var(--black)}
+    .intro p{margin:0;max-width:700px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    button,.file-label{min-height:46px;border:0;border-radius:12px;padding:11px 16px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+    .primary{background:var(--green);color:#fff}.primary:hover{background:#0d6038}
+    .secondary{background:var(--black);color:#fff}.secondary:hover{background:#3b3b3b}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .why{margin:0 0 26px;padding:22px 24px;border:3px solid var(--black);border-radius:18px;background:#fff;color:var(--black);box-shadow:7px 7px 0 var(--green)}
+    .why h2{margin:0 0 8px;font-size:1.5rem}.why p{margin:0;font-size:1.06rem}.why .slogan{display:inline-block;margin-top:14px;padding:8px 12px;background:var(--black);color:#fff;border-radius:9px;font-size:1.2rem;font-weight:900}
+    .card{overflow:hidden;border:3px solid var(--black);border-radius:18px;background:#fff;box-shadow:6px 6px 0 var(--black)}
+    .photo{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:4/3;background:repeating-conic-gradient(#fff 0 25%,#ddd 0 50%) 50%/56px 56px;overflow:hidden}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .placeholder{text-align:center;color:var(--green);font-weight:800;padding:20px}.placeholder span{display:block;font-size:3.3rem;line-height:1}
+    .file-label{position:absolute;right:12px;bottom:12px;background:rgba(17,17,17,.94);color:#fff;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+    .file-label input{position:absolute;width:1px;height:1px;opacity:0}
+    .content{padding:18px}
+    .content label{display:block;margin:0 0 5px;font-weight:800;color:var(--black)}
+    .content input,.content textarea{width:100%;border:2px solid #b9c8bd;border-radius:10px;padding:10px 12px;background:#fff}
+    .content input:focus,.content textarea:focus{outline:3px solid rgba(22,131,79,.25);border-color:var(--green)}
+    .content textarea{min-height:72px;resize:vertical}
+    .remove{margin-top:12px;background:#fff1f0;color:var(--red);border:1px solid #f1b7b1}
+    .note{margin:26px 0 0;padding:17px 20px;border:3px solid var(--black);border-left:10px solid var(--green);background:#fff;border-radius:0 14px 14px 0}
+    footer{padding:24px;text-align:center;background:var(--black);color:#fff;font-weight:700}
+    .empty{grid-column:1/-1;padding:44px 20px;text-align:center;border:2px dashed #9cb6a5;border-radius:20px;background:#fff}
+    @media(max-width:720px){.intro{align-items:stretch;flex-direction:column}.actions{width:100%}.actions button{flex:1}header::before,header::after{font-size:90px;opacity:.5}}
+    @media(prefers-reduced-motion:no-preference){.card{transition:transform .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(8,43,76,.14)}}
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">TORNEO DE AJEDREZ</p>
+    <h1>Premios con otra historia</h1>
+    <p>Objetos de segunda mano, en buen estado, que pueden convertirse en el premio favorito de otra persona.</p>
+    <img class="hero-art" src="ajedrez-divertido.png" alt="Piezas de ajedrez blancas y negras celebrando juntas alrededor de un regalo">
+  </header>
+
+  <main>
+    <section class="intro" aria-label="Controles de la galería">
+      <p><strong>Armá la galería:</strong> agregá una tarjeta por premio, elegí su foto y escribí el nombre. Los cambios quedan guardados en este navegador.</p>
+      <div class="actions">
+        <button class="secondary" id="add" type="button">＋ Agregar premio</button>
+        <button class="primary" id="download" type="button">↓ Descargar galería</button>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <h2 id="why-title">♻️ ¿Por qué reutilizamos?</h2>
+      <p>Porque creemos que <strong>no todo lo nuevo es mejor</strong>. Reutilizamos y redistribuimos para cuidar el ambiente y frenar el consumismo.</p>
+      <p class="slogan">🌱 Premios de segunda mano. De primera oportunidad.</p>
+    </section>
+
+    <section class="gallery" id="gallery" aria-live="polite" aria-label="Premios"></section>
+
+    <p class="note">Reutilizar, redistribuir y compartir también es cuidar el ambiente.</p>
+  </main>
+
+  <footer>Jugadas que unen · Liceo San Luis</footer>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="photo">
+        <div class="placeholder"><span aria-hidden="true">🎁</span>Agregá una foto</div>
+        <img alt="" hidden>
+        <label class="file-label">📷 Elegir foto<input type="file" accept="image/*"></label>
+      </div>
+      <div class="content">
+        <label>Nombre del premio<input class="title" type="text" placeholder="Ej.: Juego de mesa" maxlength="70"></label>
+        <label>Descripción breve (opcional)<textarea class="description" placeholder="Ej.: Completo y en buen estado" maxlength="140"></textarea></label>
+        <button class="remove" type="button">Eliminar premio</button>
+      </div>
+    </article>
+  </template>
+
+  <script>
+    const STORAGE_KEY = 'jugadas-que-unen-premios-v1';
+    const gallery = document.querySelector('#gallery');
+    const template = document.querySelector('#cardTemplate');
+    let prizes = load();
+
+    function load(){
+      try{return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [{title:'',description:'',image:''}];}
+      catch{return [{title:'',description:'',image:''}];}
+    }
+
+    function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(prizes));}
+
+    function compress(file){
+      return new Promise((resolve,reject)=>{
+        const reader=new FileReader();
+        reader.onerror=reject;
+        reader.onload=()=>{
+          const image=new Image();
+          image.onerror=reject;
+          image.onload=()=>{
+            const max=1200,scale=Math.min(1,max/Math.max(image.width,image.height));
+            const canvas=document.createElement('canvas');
+            canvas.width=Math.round(image.width*scale);canvas.height=Math.round(image.height*scale);
+            canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);
+            resolve(canvas.toDataURL('image/jpeg',.84));
+          };
+          image.src=reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function render(){
+      gallery.innerHTML='';
+      if(!prizes.length){
+        gallery.innerHTML='<div class="empty"><strong>Todavía no hay premios.</strong><br>Usá “Agregar premio” para comenzar.</div>';
+        return;
+      }
+      prizes.forEach((prize,index)=>{
+        const card=template.content.firstElementChild.cloneNode(true);
+        const img=card.querySelector('img');
+        const placeholder=card.querySelector('.placeholder');
+        const title=card.querySelector('.title');
+        const description=card.querySelector('.description');
+        if(prize.image){img.src=prize.image;img.alt=prize.title?`Premio: ${prize.title}`:'Foto del premio';img.hidden=false;placeholder.hidden=true;}
+        title.value=prize.title;description.value=prize.description;
+        title.addEventListener('input',e=>{prizes[index].title=e.target.value;save();});
+        description.addEventListener('input',e=>{prizes[index].description=e.target.value;save();});
+        card.querySelector('input[type=file]').addEventListener('change',async e=>{
+          if(!e.target.files[0])return;
+          prizes[index].image=await compress(e.target.files[0]);save();render();
+        });
+        card.querySelector('.remove').addEventListener('click',()=>{prizes.splice(index,1);save();render();});
+        gallery.append(card);
+      });
+    }
+
+    document.querySelector('#add').addEventListener('click',()=>{prizes.push({title:'',description:'',image:''});save();render();gallery.lastElementChild.scrollIntoView({behavior:'smooth'});});
+
+    document.querySelector('#download').addEventListener('click',async()=>{
+      const items=prizes.filter(p=>p.image||p.title||p.description);
+      if(!items.length){alert('Agregá al menos un premio antes de descargar la galería.');return;}
+      const cards=items.map((p,i)=>`<article class="card"><div class="photo">${p.image?`<img src="${p.image}" alt="${escapeHtml(p.title||'Premio '+(i+1))}">`:'<div class="placeholder"><span>🎁</span>Foto próximamente</div>'}</div><div class="content"><h2>${escapeHtml(p.title||'Premio '+(i+1))}</h2>${p.description?`<p>${escapeHtml(p.description)}</p>`:''}</div></article>`).join('');
+      const heroBlob=await fetch(document.querySelector('.hero-art').src).then(r=>r.blob());
+      const heroData=await blobToDataUrl(heroBlob);
+      const style=document.querySelector('style').textContent+' .content h2{margin:0;color:var(--black);font-size:1.35rem}.content p{margin:8px 0 0}.file-label,.remove,.intro{display:none}';
+      const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Premios del torneo Jugadas que unen"><title>Premios | Jugadas que unen</title><style>${style}</style></head><body><header><p class="eyebrow">TORNEO DE AJEDREZ</p><h1>Premios con otra historia</h1><p>Objetos de segunda mano, en buen estado, que pueden convertirse en el premio favorito de otra persona.</p><img class="hero-art" src="${heroData}" alt="Piezas de ajedrez blancas y negras celebrando juntas alrededor de un regalo"></header><main><section class="why" aria-labelledby="why-title"><h2 id="why-title">♻️ ¿Por qué reutilizamos?</h2><p>Porque creemos que <strong>no todo lo nuevo es mejor</strong>. Reutilizamos y redistribuimos para cuidar el ambiente y frenar el consumismo.</p><p class="slogan">🌱 Premios de segunda mano. De primera oportunidad.</p></section><section class="gallery" aria-label="Premios">${cards}</section><p class="note">Reutilizar, redistribuir y compartir también es cuidar el ambiente.</p></main><footer>Jugadas que unen · Liceo San Luis</footer></body></html>`;
+      const blob=new Blob([html],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='premios-jugadas-que-unen.html';a.click();URL.revokeObjectURL(a.href);
+    });
+
+    function escapeHtml(value){const d=document.createElement('div');d.textContent=value;return d.innerHTML;}
+    function blobToDataUrl(blob){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(blob);});}
+    render();
+  </script>
+</body>
+</html>
